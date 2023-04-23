@@ -1,5 +1,5 @@
 #include <iostream>
-#include <stack>
+#include <queue>
 #include <string>
 
 using namespace std;
@@ -7,7 +7,7 @@ using namespace std;
 int main(){
   int N;
   string command;
-  stack<int> st;
+  queue<int> qu;
 
   cin >> N;
   cin.ignore();
@@ -31,27 +31,33 @@ int main(){
     }
 
     if(str1.compare("push") == 0){
-      st.push(num);
+      qu.push(num);
     }else if(str1.compare("pop") == 0){
-      if(!st.empty()){
-        cout << st.top() << endl;
-        st.pop();
+      if(!qu.empty()){
+        cout << qu.front() << endl;
+        qu.pop();
       } else{
         cout << "-1\n";
       }
     } else if(str1.compare("size")==0){
-      cout << st.size() << endl;
+      cout << qu.size() << endl;
     } else if(str1.compare("empty") == 0){
-      if(st.empty()){
+      if(qu.empty()){
         cout << 1 << endl;
       }else{
         cout << 0 << endl;
       }
-    } else if(str1.compare("top") == 0){
-      if(st.empty()){
+    } else if(str1.compare("front") == 0){
+      if(qu.empty()){
         cout << -1 << endl;
       }else{
-        cout << st.top() << endl;
+        cout << qu.front() << endl;
+      }
+    }else if(str1.compare("back") == 0){
+      if(qu.empty()){
+        cout << -1 << endl;
+      }else{
+        cout << qu.back() << endl;
       }
     }
   }
