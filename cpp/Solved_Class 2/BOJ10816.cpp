@@ -1,4 +1,5 @@
 /*
+현재 사용한 기법 => Pigeonhole Principle
 sort 형식으로도 가능
 lower_bound, upper_bound,, 
 */
