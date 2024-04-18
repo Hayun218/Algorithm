@@ -1,25 +1,21 @@
 #include<iostream>
 using namespace std;
 
-int fibonacci(int a) {
-    if(a < 2) return 1;
-    else return a * fibonacci(a-1);
-}
-
 int main() {
-    ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+    ios::sync_with_stdio(false); cin.tie(0);
 
-    int n, fi, cnt = 0;
-    cin >> n;
+	int N;
+	int mul5 = 0;	// 5의 배수
+	int mul25 = 0;	// 25의 배수
+	int mul125 = 0;	// 125의 배수
 
-    fi = fibonacci(n);
+	cin >> N;
 
-    while(fi % 10 == 0) {
-        fi = fi / 10;
-        cnt++;
-    }
+	mul5 = N / 5;
+	mul25 = N / 25;
+	mul125 = N / 125;
 
-    cout << cnt << '\n';
+	cout << mul5 + mul25 + mul125 << '\n';
 
-    return 0;
+	return 0;
 }
